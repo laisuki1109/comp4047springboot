@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MyController {
-    @GetMapping("**")
+    @GetMapping("load")
     @ResponseBody
     String load(HttpServletRequest request) {
         return String.format("You are browsing %s",
