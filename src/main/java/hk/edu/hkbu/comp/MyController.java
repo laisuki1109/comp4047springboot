@@ -97,6 +97,8 @@ public class MyController {
 		if(temp!=null) {
 			result = new ArrayList<UrlObject>(temp);
 			
+		}if(input[0].contains("(")) {
+			result = handleUserRequest(release(input[0]));
 		}
 		int i =1;
 		while(input.length>i) {
