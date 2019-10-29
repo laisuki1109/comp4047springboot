@@ -114,6 +114,7 @@ public class MyController {
 							i = i+2;
 					}
 					
+					
 				}else { //if other words
 					if(input.length>i) {
 					if(input[i].contains("(")) {
