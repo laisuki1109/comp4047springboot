@@ -113,8 +113,6 @@ public class MyController {
 							result = combineANDList(result,result2);
 							i = i+2;
 					}
-					
-					
 				}else { //if other words
 					if(input.length>i) {
 					if(input[i].contains("(")) {
