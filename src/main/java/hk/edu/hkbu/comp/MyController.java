@@ -148,25 +148,27 @@ public class MyController {
 		return finalResult;
 	}
 	String res(String str) {
-		readData();
 		String fomatStr = str;
 		
 		//print out what we have input;
 		fomatStr = fomatStr.replace("%28", "(");
 		fomatStr = fomatStr.replace("%29", ")");		
 		System.out.println(fomatStr);	
-		//retreive 
+		
 		ArrayList<String> groupitem = new ArrayList<String>();
-		Matcher m = Pattern.compile("\\[()]\\").matcher(fomatStr);
-		   		
-        //String[] strs = pattern.split(fomatStr);  
-	
-        while(m.find()) {	    	 	    	
-	    	String temp= String.format(m.group(0));	    	 
-	    	 groupitem.add(temp);	    	 	    	 
-	}
-        System.out.print(groupitem);  		
-        String.format(fomatStr);   				
+		
+		Matcher m = Pattern.compile("(\\([^)]+\\)|\\w+)").matcher(fomatStr);		   		 	
+        while(m.find()) {	    	 	    		    	   	 
+	    	 System.out.println("Found bracket from index "+ m.start() +" to "+ (m.end()-1));
+	    	 String temp= String.format(m.group(0));	    	 
+	    	 groupitem.add(temp);
+	    	 
+	    	 //groupitem.add(m.start());
+	    	//groupitem.add(m.end()-1);	    	 	    	
+	}       	
+        String.format(fomatStr);   
+        System.out.println("groupitem: ");
+        System.out.println(groupitem);
 		return fomatStr; 
 		
 	}
